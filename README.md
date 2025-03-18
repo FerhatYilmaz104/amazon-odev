@@ -112,7 +112,7 @@ public void testAmazonShoppingFlow() {
 
 1. Projeyi klonlayın:
 ```bash
-git clone [proje-url]
+git clone https://github.com/FerhatYilmaz104/amazon-odev.git
 ```
 
 2. Proje dizinine gidin:
