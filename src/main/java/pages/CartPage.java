@@ -10,18 +10,12 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-/**
- * Amazon.com.tr sepet sayfası için Page Object Model sınıfı.
- * Bu sınıf sepet sayfasındaki elementleri ve işlemleri içerir.
- */
+
 public class CartPage extends BaseTest {
     
-    // Sayfa elementleri
+
     @FindBy(xpath = "//h1[contains(text(), 'Sepete eklendi')]")
     private WebElement addedToCartText;
-    
-    @FindBy(id = "nav-cart-count")
-    private WebElement cartCount; // Sepetteki ürün sayısı
 
     @FindBy(id = "nav-cart")
     private WebElement cartButton;
@@ -40,21 +34,14 @@ public class CartPage extends BaseTest {
 
 
 
-    /**
-     * CartPage sınıfının kurucu metodu.
-     * @param driver WebDriver nesnesi
-     */
+
     public CartPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
     
-    /**
-     * Ürünün sepete eklendiğini kontrol eder.
-     * Sepetteki ürün sayısının 1 olduğunu doğrular.
-     * Eğer ürün sayısı 1 değilse hata fırlatır.
-     */
+
     public void verifyProductAddedToCart() {
         waitForVisibility(addedToCartText);
         System.out.println("Ürünün sepete eklendiği doğrulanır.");
@@ -65,10 +52,7 @@ public class CartPage extends BaseTest {
         System.out.println("Sepet butonuna tıklanır");
     }
 
-    /**
-     * Sepet sayfasının yüklendiğini kontrol eder.
-     * Sepetteki ilk ürünün görünür olmasını bekler.
-     */
+
     public void verifyCartPageLoaded() {
         waitForVisibility(shoppingCartText);
         System.out.println("Sepet sayfasında olduğumuz doğrulanır");
